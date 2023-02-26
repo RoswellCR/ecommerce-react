@@ -24,10 +24,9 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product() {
+export default function Product({product}) {
   const [expanded, setExpanded] = React.useState(false);
-  const rating = 5;
-
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -41,27 +40,27 @@ export default function Product() {
             className={ClassNames.action}
             variant='h5'
             color='textSecondary'
-          >{accounting.formatMoney(50, "€")}</Typography>
+          >{accounting.formatMoney(product.price, "€")}</Typography>
         }
-        title="Shoes"
+        title={product.name}
         subheader="in Stock"
       />
       <CardMedia
         component="img"
         height="194"
-        image="https://s2.r29static.com/bin/entry/ebd/0,675,2000,1050/x,80/1929471/image.jpg"
-        alt="Nike shoes"
+        image={product.image }
+        alt={product.name}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Running shoes
+          {product.productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <AddShoppingCartIcon />
         </IconButton>
-        {Array(rating)
+        {Array(product.rating)
          .fill()
          .map((_,i) => (
           <p>&#11088;</p>
@@ -78,7 +77,7 @@ export default function Product() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-            Heat 2 shoes in a cup .
+            {product.description}
           </Typography>
         </CardContent>
       </Collapse>
