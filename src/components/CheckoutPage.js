@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 // import { useStateValue } from "../StateProvider";
 import CheckoutCard from "./CheckoutCard";
-// import Total from "./Total";
+import Total from "./Total";
 import products from "../product-data";
 // import Product from "./Product";
 
@@ -44,7 +44,7 @@ const CheckoutPage = () => {
         </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <Typography align='center' gutterBottom variant='h4'>
-            {/* <Total /> */}Total
+            <Total />
           </Typography>
         </Grid>
       </Grid>
