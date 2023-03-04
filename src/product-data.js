@@ -18,7 +18,7 @@ const products = [
       price: 1000,
       rating: 4,
       image:
-        "https://cnet3.cbsistatic.com/img/yjrw7VgWV7a95AvK8Ym0Np4bFXY=/1200x675/2017/06/27/13484418-bfd9-41e2-8f2d-9b4afb072da8/apple-macbook-pro-15-inch-2017-14.jpg",
+        "https://www.digitaltrends.com/wp-content/uploads/2022/08/macbook-air-m2-1.jpg?resize=625%2C417&p=1",
       description:
         "Apple MacBook Pro is a macOS laptop with a 13.30-inch display that has a resolution of 2560x1600 pixels. It is powered by a Core i5 processor and it comes with 12GB of RAM. The Apple MacBook Pro packs 512GB of SSD storage.",
     },
@@ -40,7 +40,7 @@ const products = [
       price: 42,
       rating: 5,
       image:
-        "https://merchoidcdn-pveiw4zwh96ot9z.netdna-ssl.com/media/catalog/product/cache/65c63282a2b3bd0da0ec5b004bcde549/x/b/xbox-jumper.jpg",
+        "https://www.fjallraven.com/4a1b9e/globalassets/catalogs/fjallraven/f8/f818/f81829/f555/ovik_knit_sweater_m_81829-555_a_main_fjr.jpg?width=2000&height=2000&mode=BoxPad&bgcolor=fff&quality=80",
       description:
         "PC or Mac. Pepsi or Coke. Xbox or…that other console. It isn’t always easy to show your allegiances, especially when you’re bundled up for the holidays, but this jumper will let you make it abundantly clear what type of games you want to find under your tree.",
     },
