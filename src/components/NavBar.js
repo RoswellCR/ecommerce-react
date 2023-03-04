@@ -6,7 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import logo from "../assets/Holguin-equipo.png";
 import { Badge, Button, Typography } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,15 +37,17 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <img src={logo} className={classes.image} alt="logo-title"/>
-          </IconButton>
+          <Link to="/"> 
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <img src={logo} className={classes.image} alt="logo-title"/>
+            </IconButton>
+          </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" color="textPrimary" component="p">Hello Gest</Typography>
           
@@ -53,11 +55,13 @@ export default function Navbar() {
             <Button variant="outlined">
             <strong>Sign In</strong>
             </Button>
-            <IconButton aria-label="show cart items" color="inherit">
-              <Badge badgeContent={2} color="secondary">
-                <ShoppingCart fontSize="large" color="primary"/>
-              </Badge>  
-            </IconButton>
+            <Link to="checkout-page">
+              <IconButton aria-label="show cart items" color="inherit">
+                <Badge badgeContent={2} color="secondary">
+                  <ShoppingCart fontSize="large" color="primary"/>
+                </Badge>  
+              </IconButton>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
