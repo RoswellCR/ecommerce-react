@@ -7,7 +7,8 @@ import logo from "../assets/Holguin-equipo.png";
 import { Badge, Button, Typography } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import {Link} from "react-router-dom";
-
+import { actionTypes } from '../reducer';
+import {useStateValue} from '../StateProvider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
   
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
@@ -57,7 +60,7 @@ export default function Navbar() {
             </Button>
             <Link to="checkout-page">
               <IconButton aria-label="show cart items" color="inherit">
-                <Badge badgeContent={2} color="secondary">
+                <Badge badgeContent={basket.length} color="secondary">
                   <ShoppingCart fontSize="large" color="primary"/>
                 </Badge>  
               </IconButton>
