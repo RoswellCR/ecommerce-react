@@ -60,7 +60,7 @@ export default function Navbar() {
             </Button>
             <Link to="checkout-page">
               <IconButton aria-label="show cart items" color="inherit">
-                <Badge badgeContent={basket.length} color="secondary">
+                <Badge badgeContent={basket?.length} color="secondary">
                   <ShoppingCart fontSize="large" color="primary"/>
                 </Badge>  
               </IconButton>

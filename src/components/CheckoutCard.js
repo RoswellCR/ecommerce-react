@@ -10,6 +10,8 @@ import accounting from "accounting";
 import {makeStyles} from "@material-ui/core"
 import { Delete } from '@material-ui/icons';
 import IconButton from '@mui/material/IconButton';
+import { actionTypes } from '../reducer';
+import {useStateValue} from '../StateProvider';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,11 +39,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckoutCard({product}) {
   const [expanded, setExpanded] = React.useState(false);
+  const [{basket}, dispatch] = useStateValue();
   const classes = useStyles();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const deleteItem = () => {
+    dispatch({ type: actionTypes.DELETE_ITEM , id: product.id, })
+    }
+  
 
   return (
     <Card sx={{ maxWidth: 345 }} className={classes.root}>
@@ -73,10 +81,11 @@ export default function CheckoutCard({product}) {
           ))}
         </div>  
           <IconButton>
-            <Delete/>
+            <Delete onClick={deleteItem}/>
           </IconButton>
       </CardActions>
       
     </Card>
   );
 }
+
