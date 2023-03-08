@@ -11,9 +11,10 @@ export const actionTypes = {
 }
 
 export const getBasketTotal = (basket)=>{ 
-    let cant=basket?.reduce((amount, item)=> item.price + amount, 0);
-    console.log('aqui llega'+cant)
+    return basket?.reduce((amount, item)=> item.price + amount, 0);
+    
 }
+
 
 const reducer = (state, action ) => {
         console.log(action);

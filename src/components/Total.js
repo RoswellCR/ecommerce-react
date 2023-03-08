@@ -23,12 +23,12 @@ button: {
 
 const Total = () => {
   const classes = useStyles()
-  const [{basket}, dispatch] = useStateValue();
-
+  const [ {basket}, dispatch] = useStateValue();
+  
     return (
     <div className={classes.root}>
         <h5>Total items: {basket?.length} </h5>
-        <h5>{accounting.formatMoney(getBasketTotal(basket),"€")}</h5>
+        <h5>{ accounting.formatMoney( getBasketTotal(basket), "€") }</h5>
         <Button className={classes.button} variant="contained" 
         color="secondary">Check out</Button>
     </div>
